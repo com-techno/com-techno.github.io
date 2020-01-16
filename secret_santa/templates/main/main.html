@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link
+            rel="shortcut icon"
+            href="{% static 'img/background.jpg' %}"
+            type="image/x-ikon"><!--Link icon-->
+    <link
+            rel="stylesheet"
+            href="{% static 'main/css/mainstyle.css' %}"
+            type="text/css"><!--Link stylesheet-->
+</head>
+<header>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <div class="headblock">
+                    <form action="{% block main %}{% url 'main:main' %}{% endblock main %}"><button id="mainbutton" class="button">На&nbsp;главную</button></form>
+                </div>
+            </td>
+            <td style="width: 100%"></td>
+            <td style="width: available">
+                <form action="{% block rules %}{% url 'main:rules' %}{% endblock rules %}"><button id="rulesbutton" class="button">Правила&nbsp;игры</button></form>
+            </td>
+            <td style="width: available">
+                <div class="headblock">
+                    <form action="{% block aboutus %}{% url 'main:aboutus' %}{% endblock aboutus %}"><button id="aboutusbutton" class="button">О&nbsp;нас</button></form>
+                </div>
+            </td>
+            <td style="width: auto">
+                <div class="headblock">
+                    <form action="{% block new %}{% url 'games:new' %}{% endblock new %}"><button id="newbutton" class="button b">Начать&nbsp;игру</button></form>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+    </div>
+</header>
+<body>{% block mainbody %}Главная страница{% endblock mainbody %}</body>
+</html>
+
+
